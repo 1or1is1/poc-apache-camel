@@ -32,7 +32,7 @@ public class MockKafkaProducer {
   public void produceMessages() {
     executor.scheduleAtFixedRate(() -> {
       try {
-        counter.updateAndGet(value -> value % 5);
+        counter.updateAndGet(value -> value % 2);
         var message = "Message %f".formatted(Math.random());
         var record = new ProducerRecord<String, String>(topic, message);
         record.headers().add("id", String.valueOf(counter.get()).getBytes());

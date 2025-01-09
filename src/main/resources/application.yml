@@ -19,7 +19,7 @@ camel:
 app:
   configuration:
     source-topic: poc-topic
-    aggregation-threshold: 2
+    aggregation-threshold: 10
     aggregation-timeout-ms: 10000
     output-file-path: output
 
