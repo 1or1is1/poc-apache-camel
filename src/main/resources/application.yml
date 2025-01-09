@@ -20,6 +20,6 @@ app:
   configuration:
     source-topic: poc-topic
     aggregation-threshold: 10
-    aggregation-timeout-ms: 10000
+    aggregation-timeout-ms: 30000
     output-file-path: output
 
