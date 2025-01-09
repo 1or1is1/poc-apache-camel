@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: poc
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      bootstrap-servers: localhost:9092
+      acks: -1
+server:
+  port: 9090
+camel:
+  component:
+    kafka:
+      brokers: localhost:9092
+      group-id: poc-group-id
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+app:
+  configuration:
+    source-topic: poc-topic
+    aggregation-threshold: 2
+    aggregation-timeout-ms: 10000
+    output-file-path: output
+
